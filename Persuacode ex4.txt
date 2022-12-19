@@ -1,0 +1,36 @@
+input: {1,2,3,4,5}
+output: static linked list
+	1 —> 2 —> 3 —> 4 —> 5 —> NULL
+*************************************************************
+giai thich:
+
+#tao danh sach lien ket don:
+struct Node
+{
+    int data;
+    struct Node* next;
+};
+***************************************
+main:
+
+int arr[n] = {1,2,3,4,5}
+node NODE[n];
+# gán giá trị từ mảng vào danh sách
+for (int i = 0; i < n; i++)
+    {
+        NODE[i].data = arr[i];
+        NODE[i].next = NULL;
+ 
+        if (i > 0) {
+            NODE[i-1].next = &NODE[i];
+        }
+    }
+# in ra danh sách
+struct node* head = NODE;
+ struct node* p = head;
+    while (p != NULL)
+    {
+        cout << " —> " << p.data;
+        p = p->next;
+    }
+    printf("NULL");
